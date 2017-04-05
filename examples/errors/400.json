@@ -1,0 +1,9 @@
+{
+  "errors": [
+    {
+      "code": "INVALID_POSTCODE",
+      "message": "The postcode is invalid",
+      "path": "/postcode"
+    }
+  ]
+}

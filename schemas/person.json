@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Person",
+  "type": "object",
+  "properties": {
+    "firstName": {
+      "title": "First Name",
+      "description": "First Name of the Person",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120
+    },
+    "secondName": {
+      "title": "Second Name",
+      "description": "Second Name of the Person",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120
+    },
+    "age": {
+      "title": "Age",
+      "description": "Age of the Person",
+      "type": "number",
+      "minimum": 0
+    },
+    "mobileNumber": {
+      "title": "Mobile Phone Number",
+      "description": "Mobile Phone Number of the Person",
+      "type": "string",
+      "pattern": "\\+?(447|07)\\d{9}"
+    },
+    "address": {
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "title": "Person's Address",
+      "type": "object",
+      "properties": {
+        "lineOne": {
+          "title": "Line One",
+          "description": "First line of address",
+          "type": "string"
+        },
+        "street": {
+          "title": "Street",
+          "description": "Address Street",
+          "type": "string"
+        },
+        "town": {
+          "title": "Town",
+          "description": "Address Town",
+          "type": "string"
+        },
+        "postcode": {
+          "title": "Postcode",
+          "description": "Address Postcode",
+          "type": "string"
+        }
+      },
+      "required": [
+        "lineOne",
+        "street",
+        "town",
+        "postcode"
+      ]
+    }
+  },
+  "required": [
+    "firstName",
+    "secondName",
+    "age",
+    "mobileNumber"
+  ],
+  "additionalProperties": false
+}

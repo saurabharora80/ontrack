@@ -1,0 +1,9 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Persons",
+  "type": "array",
+  "items": {
+    "$ref": "schemas/person.json"
+  },
+  "additionalProperties": false
+}

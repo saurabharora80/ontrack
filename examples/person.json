@@ -1,0 +1,12 @@
+{
+  "firstName": "saurabh",
+  "secondName": "arora",
+  "age": 36,
+  "mobileNumber": "07528113222",
+  "address": {
+    "lineOne": "Flat 55",
+    "street": "grays place",
+    "town": "slough",
+    "postcode": "SL2 5GE"
+  }
+}

@@ -1,0 +1,85 @@
+#%RAML 1.0
+---
+
+title: On Track Retail Address Book
+version: 1.0
+protocols: [ HTTP ]
+baseUri: https://api.on.track.retail/
+mediaType: application/json
+
+/address-book/person:
+  post:
+    displayName: Add Person
+    description: Add a person to address book
+    body:
+      application/json:
+        type: !include schemas/person.json
+        example: !include examples/person.json
+    responses:
+      201:
+        headers:
+          Location:
+            example: /address-book/person/{personId}
+            description: Location of the Person resource
+      400:
+        body:
+          application/json:
+            schema: !include schemas/error_400.json
+            example: !include examples/errors/400.json
+  get:
+    displayName: Get Persons
+    description: Get all persons which match criteria
+    queryParameters:
+      nameStartsWith:
+        description: "Find persons whose names start with given alphabets"
+        required: true
+        minLength: 1
+        type: string
+        example: a
+      postcode:
+        description: "Find persons who live within the given postcode"
+        required: false
+        minLength: 3
+        type: string
+        example: SL3
+      town:
+        description: "Find persons who live in the given town"
+        required: false
+        minLength: 3
+        type: string
+        example: slough
+    responses:
+      200:
+        body:
+          application/json:
+            schema: !include schemas/persons.json
+            example: !include examples/persons.json
+  /{personId}:
+    uriParameters:
+      personId:
+        displayName: Person ID
+        description: An identifier which uniquely identifies a Person
+        type: string
+    get:
+      displayName: Get a Person
+      description: Get a Person with the given Id
+      responses:
+        200:
+          body:
+            application/json:
+              schema: !include schemas/person.json
+              example: !include examples/person.json
+        404:
+          body:
+            application/json:
+              schema: !include schemas/error_400.json
+              example: !include examples/errors/404.json
+    put:
+      displayName: Update a Person
+      description: Update a Person with the given Id
+      body:
+        application/json:
+          type: !include schemas/person.json
+          example: !include examples/person.json
+      responses:
+        204:
