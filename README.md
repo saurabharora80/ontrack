@@ -93,7 +93,8 @@ Write code to execute them when:
     > Niether approach is perfect, but I prefer the Accept header option as it keep the resource URL clean and         RESTFul by using extending an already existing standard HTTP content negotiation header. 
 
 4. How would you design a REST API for an address book? What endpoints will it have (feel free to provide sample curl requests)? How would you handle errors?
-    > Please download the RAML [here](https://drive.google.com/open?id=0ByhAgajcKpuOeExyUjRkUEJXb28) or see its equivalent HTML file [here](https://drive.google.com/open?id=0ByhAgajcKpuOU0FEY0ZoNEFFTmM)
+    > See the [RAML](https://github.com/saurabharora80/ontrack/blob/master/ontrainretail.raml) 
+        or open the [HTML](https://github.com/saurabharora80/ontrack/blob/master/ontrainretail.html) in a browser. 
 
 5. Provide 2 examples of how you can safely use the string in this option:
     `val  myStringOption  =  Some ( "test" )`
